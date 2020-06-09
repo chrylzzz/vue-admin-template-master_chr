@@ -37,14 +37,17 @@ module.exports = {
       warnings: false,
       errors: true
     },
+    /**
+     * 该处为mock使用,若不适用全部注释,但是在本地测试不能启用同一端口,所以使用
+     */
     proxy: {
       // change xxx-api/login => mock/login
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
         ws: false, // proxy websockets,手动关闭 ws 代理
-        target: `http://127.0.0.1:80`,
-        // target: `http://127.0.0.1:80/mock`,//注释mock
-        changeOrigin: true,
+        // target: `http://127.0.0.1:${port}/mock`,//后台服务端口
+        target: `http://127.0.0.1:80`,//后台服务端口,测试改为不同端口,防止端口冲突
+        changeOrigin: true,//跨域配置
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
         }
