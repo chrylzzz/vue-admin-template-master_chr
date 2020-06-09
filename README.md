@@ -88,4 +88,6 @@ Modern browsers and Internet Explorer 10+.
 
 [MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
 
-Copyright (c) 2017-present PanJiaChen
+Copyright (c) 2017-present Chryl
+
+## vue脚手架
